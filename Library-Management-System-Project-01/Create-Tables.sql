@@ -1,17 +1,20 @@
-CREATE TABLE Books(
-book_id int primary key,
-title varchar(50) not null,
-price int 
+CREATE TABLE Books (
+    book_id int PRIMARY KEY,
+    title varchar(50) NOT NULL,
+    price int 
 );
-CREATE TABLE Students(
-student_id int primary key,
-name varchar(50) not null,
-class int 
+
+CREATE TABLE Students (
+    student_id int PRIMARY KEY,
+    name varchar(50) NOT NULL,
+    class int 
 );
-CREATE TABLE Bowwo(
-borrow_id int primary key,
-book_id ,
-foreign key (book_id) references Books(book_id),
-student_id ,
-foreign key (student_id) references Students(student_id)
+
+CREATE TABLE Borrow (
+    borrow_id int PRIMARY KEY,
+    book_id int,      
+    student_id int,   
+    
+    FOREIGN KEY (book_id) REFERENCES Books(book_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
